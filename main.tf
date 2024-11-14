@@ -63,7 +63,7 @@ network_rules {
     default_action             = "Deny"
     ip_rules                   = ["100.0.0.1"]
     virtual_network_subnet_ids = [azurerm_subnet.subnet.id]
-  }
+}
 // SQL database and server
 
 resource "azurerm_mssql_server" "server" {
