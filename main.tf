@@ -44,7 +44,7 @@ resource "azurerm_subnet" "subnet" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vn.name
   address_prefixes     = ["10.0.2.0/24"]
-  service_endpoints    = ["Microsoft.SQL", "Microsoft.Storage"]
+  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
 }
 
 // Storage Account
@@ -67,7 +67,7 @@ resource "azurerm_storage_account" "storage" {
 // SQL database and server
 
 resource "azurerm_mssql_server" "server" {
-  name                         = "sqlsvr-${var.class_name}-${var.student_name}-${var.environment}"
+  name                         = "ssr-${var.class_name}-${var.student_name}-${var.environment}"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   version                      = "12.0"
